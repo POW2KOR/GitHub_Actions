@@ -1,0 +1,23 @@
+name: First Workflow
+on: [push]
+
+jobs:
+  run-shell-commands:
+    runs-on: self-hosted
+    steps:
+      - name: echo a string
+        run: echo "Hello World!"
+
+  parallel-job:
+    runs-on: self-hosted
+    steps:
+      - name: echo parallel job
+        run: echo "Parallel job!"
+
+  dependent-job:
+    runs-on: self-hosted
+    needs: run-shell-commands
+    steps:
+      - name: echo parallel job
+        run: echo "Parallel job!"
+
