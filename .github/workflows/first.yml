@@ -1,0 +1,13 @@
+name: First Workflow
+on: [push]   #what needs to trigger
+
+jobs:
+  run-shell-commands:
+    runs-on: ubuntu-latest    #machine os
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+      - name: Multiline Command
+        run: |
+          node -v
+          npm -v
