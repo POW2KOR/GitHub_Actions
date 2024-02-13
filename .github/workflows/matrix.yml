@@ -1,0 +1,21 @@
+name: Matrix
+on: [push]
+
+jobs:
+  node-matrix:
+    continue-on-error: false
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]    
+        node-version: [14, 15, 16]  
+        #for multiple times if we need to run job we use matrix. Stratrgy-matrix is the format for this..
+      fail-fast: false
+      # max-parallel: 3
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: node -v
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}    
+          #it will display node with all 3 versions...it may b 1d or 2d matrix..try both
+      - run: node -v
