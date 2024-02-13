@@ -1,0 +1,16 @@
+name: Chceking if key
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+
+jobs:
+  Running-for-if-key:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
