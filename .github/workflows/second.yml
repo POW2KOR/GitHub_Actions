@@ -1,0 +1,11 @@
+name: Second Workflow
+on: [push]
+
+jobs:
+  Second-Workflow-is-running:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Run shell commands
+          run: |
+            ls
+            echo "Hello India"
