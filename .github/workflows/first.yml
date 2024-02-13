@@ -1,9 +1,9 @@
 name: First Workflow
-on: [push]   #what needs to trigger
+on: [push]
 
 jobs:
   run-shell-commands:
-    runs-on: ubuntu-latest    #machine os
+    runs-on: ubuntu-latest
     steps:
       - name: echo a string
         run: echo "Hello World"
