@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Step 1
         run: sleep 90
-        timeout-minutes: 1   # fail the steps if exceeds 1 min...ten failure will work
+        #timeout-minutes: 1   # fail the steps if exceeds 1 min...ten failure will work
       - name: Step 2
         id: step-2
         continue-on-error: true  
