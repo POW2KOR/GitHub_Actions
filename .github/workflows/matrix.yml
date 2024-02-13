@@ -19,3 +19,6 @@ jobs:
           node-version: ${{ matrix.node-version }}    
           #it will display node with all 3 versions...it may b 1d or 2d matrix..try both
       - run: node -v
+
+      #failFast is used to abort the pipeline or stage as soon as any error is encountered.
+#continueOnError is used to continue executing subsequent steps even if a particular step fails
