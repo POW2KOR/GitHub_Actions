@@ -45,7 +45,7 @@ jobs:
       - name: Run a bash script
         uses: docker://node:18.16-alpine3.17
         with:
-         entrypoint: /bin/sh
+         entrypoint: sh
          args: -c 'ls && echo "run"'
 
         # with:
