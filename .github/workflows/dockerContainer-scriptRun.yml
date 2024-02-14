@@ -1,4 +1,4 @@
-name: Docker
+name: Docker with script run
 on: [workflow_dispatch]
 
 jobs:
