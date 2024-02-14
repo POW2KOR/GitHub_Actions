@@ -46,5 +46,5 @@ jobs:
         uses: docker://node:18.16-alpine3.17
         with:
             entrypoint: /bin/sh
-            args: ./script.sh "Some string"
+            args: ${{ github.workspace }}/script.sh "Some string"
   
