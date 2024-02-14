@@ -46,7 +46,7 @@ jobs:
         uses: docker://node:18.16-alpine3.17
         with:
          entrypoint: sh
-         args: -c 'ls && echo "run"'
+         args: -c 'ls ; echo "run"'
 
         # with:
         #     entrypoint: /bin/sh
