@@ -45,6 +45,10 @@ jobs:
       - name: Run a bash script
         uses: docker://node:18.16-alpine3.17
         with:
-            entrypoint: /bin/sh
-            args: ${{ github.workspace }}/script.sh "Some string"
+         entrypoint: /bin/sh
+         args: -c 'ls && echo "run"'
+
+        # with:
+        #     entrypoint: /bin/sh
+        #     args: ${{ github.workspace }}/script.sh "Some string"
   
