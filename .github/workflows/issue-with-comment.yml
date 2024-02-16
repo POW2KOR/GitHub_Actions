@@ -1,0 +1,13 @@
+name: checking with issue
+
+on:
+    issues:
+        types: [opened]
+
+jobs:
+    Job-with-issue:
+        runs-on: ubuntu-latest
+        steps:
+           - name: Chceking with context
+             run: echo ' ${{toJson(github.event)}} ' | jq
+             shell: bash

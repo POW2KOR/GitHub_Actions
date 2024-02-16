@@ -1,0 +1,22 @@
+name: Build-and-push-docker-images
+on:
+    release:
+        types: [published]
+
+jobs:
+    push-to-docker-hub:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: action/checkout@v3
+            - name: login to docker hub
+              uses: docker/login@v2
+              with:
+                username: ${{vars.DOCKER_USERNAME}}
+                password: ${{secrets.DOCKER_PASSWORD}}
+            - name: Extract metadata
+              id: metadata
+              uses: docker/metadata-action@v4
+              with: 
+                images: 
+
+              

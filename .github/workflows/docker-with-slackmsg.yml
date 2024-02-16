@@ -1,4 +1,4 @@
-name: Docker with script run
+name: Docker
 on: [workflow_dispatch]
 
 jobs:
@@ -45,10 +45,12 @@ jobs:
       - name: Run a bash script
         uses: docker://node:18.16-alpine3.17
         with:
-         entrypoint: sh
-         args: -c 'ls ; echo "run"'
-
-        # with:   not working
-        #     entrypoint: ./script.sh
-        #     args: "Some string"
-  
+          entrypoint: ./script.sh
+          args: "Some string"
+      - name: Send a slack message
+        uses: docker://technosophos/slack-notify
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_TITLE: From Github Actions
+          SLACK_MESSAGE: "Actor: ${{github.actor}}, Event: ${{github.event_name}}"
+          SLACK_COLOR: "#723fc4"
